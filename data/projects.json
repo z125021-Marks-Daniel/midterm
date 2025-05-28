@@ -1,0 +1,104 @@
+[
+  {
+    "id": "island1",
+    "title": "Plant App for Android",
+    "summary": "Android App tracking moisture, humidity and temperature of your plant.",
+    "details": "An Android App, which is programmed mostly in Java. I used an ESP8266 to read the data from a DHT11 temperature sensor and a soil moisture sensor. The data is then send to an InfluxDb database, from which the app reads the data and shows the user the current values.",
+    "technologies": ["Java", "Android Studio", "ESP8266", "Arduino","InfluxDB"],
+    "pictures": [
+      { "src": "../images/ProjPic/ProPic1/plant1.jpg", "alt": "A moisture sensor sticking into the dirt of a plant" },
+      { "src": "../images/ProjPic/ProPic1/plant2.jpg", "alt": "A breadboard which connects an ESP8266 to a DHT11 Sensor" },
+      { "src": "../images/ProjPic/ProPic1/plant3.jpg", "alt": "The Interface of the App, which shows temperature, humidity and soil moisture" }
+    ],
+    "level": 1
+  },
+  {
+    "id": "island2",
+    "title": "Lego Fighting Robot",
+    "summary": "A Lego Mindstorms robot which plays sumo against other robots.",
+    "details": "In an extra course in high school we built a Lego Mindstorms robot, which could fight against other robots. We programmed it in Java and used the Lego Mindstorms API to control the motors and sensors. It works fully autonomously and can detect the opponent robot and attack it. It does that with multiple lidar sensors and pressure sensors. The goal is to push the opponent robot out of the ring. To help with that goal the robot has a giant shovel like front, which tries to lift enemies up and caryy them out of the ring. To not get pushed out of the ring itself, it has a special mechanism to detect the edge of the ring via a color sensor and drive back in. The robot uses two Lego Mindstorms Control Units, which are connected via Bluetooth. One controls the motors and the other one the sensors.It actually won the first place in the competition.",
+    "technologies": ["Java", "Lego Mindstorms"],
+    "pictures": [
+      { "src": "../images/ProjPic/ProPic2/robot1.jpg", "alt": "Lego robot front view" },
+      { "src": "../images/ProjPic/ProPic2/robot2.jpg", "alt": "Lego robot side view" },
+      { "src": "../images/ProjPic/ProPic2/robot3.jpg", "alt": "Lego robot bottom view" },
+      { "src": "../images/ProjPic/ProPic2/robvid1.mp4", "alt": "Lego robot attacking video", "type": "video" }
+    ],
+    "level": 2
+  },
+  {
+    "id": "island3",
+    "title": "Terminal Game in Python",
+    "summary": "The board game 'Mastermind' working in the terminal.",
+    "details": "The boad game 'Mastermind' is a game where one player has to guess a code, which the other player has set. The code consists of four colors, which can be repeated. The player has to guess the code in a limited number of tries. After each try, the player gets feedback on how many colors are correct and how many are in the right position. The game is played in the terminal and is fully functional. You can choose the colors and the number of tries. The game also features the option to play against the computer, which will set a random code for you to guess, or another player via the network. The game is written in Python and uses the socket library to communicate between the players.",
+    "technologies": ["Python"],
+    "pictures": [
+      { "src": "../images/ProjPic/ProPic3/term1.png", "alt": "Python terminal game start screen" },
+      { "src": "../images/ProjPic/ProPic3/term2.png", "alt": "Python terminal gameplay" },
+      { "src": "../images/ProjPic/ProPic3/term3.png", "alt": "Python terminal result screen" }
+    ],
+    "level": 3
+  },
+  {
+    "id": "island4",
+    "title": "Website",
+    "summary": "A Website featuring blog posts critical of the current state of the Berlin infastructure.",
+    "details": "This website works as a blog, where you can either log in as an admin and write, edit or delete blog posts or as a user and read the blog posts. Every post features a title, a description togheter with tags why the infastructure is failing. The website is written in JavaScript and uses Node.js as the backend. It uses MongoDB as the database to store the blog posts and user data. The Goal of this website is to inform people about the current state of the Berlin infastructure and to raise awareness for the problems. ",
+    "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "MongoDB"],
+    "pictures": [
+      { "src": "../images/ProjPic/ProPic4/web1.jpeg", "alt": "Blog website login screen" },
+      { "src": "../images/ProjPic/ProPic4/web2.jpeg", "alt": "Blog post overview" },
+      { "src": "../images/ProjPic/ProPic4/web3.jpeg", "alt": "Admin interface detail view" }
+    ],
+    "level": 4
+  },
+  {
+    "id": "island5",
+    "title": "Timetable App",
+    "summary": "A simple Android App to track your timetable.",
+    "details": "A simple Android App, which allows you to track your timetable. You can add, edit and delete lessons and see them in a list. You can also activate notifications for your current class. It features a simple user interface and is easy to use. The data is stored localy in an SQL Database.",
+    "technologies": ["Android Studio", "Java"],
+    "pictures": [
+      { "src": "../images/ProjPic/ProPic5/app1.jpeg", "alt": "Timetable app adding an event" },
+      { "src": "../images/ProjPic/ProPic5/app2.jpeg", "alt": "Timetable app side bar with features" },
+      { "src": "../images/ProjPic/ProPic5/app3.jpeg", "alt": "Timetable app day view" }
+    ],
+    "level": 5
+  },
+  {
+    "id": "island6",
+    "title": "Plant App but in Cloud",
+    "summary": "Cloud version of the Plant App for Android.",
+    "details": "FIX: The plant app is now in the Amazon Web Services Cloud. It uses AWS IoT to connect the ESP8266 to the cloud and send the data to an InfluxDB database. The Android app reads the data from the database and shows the user the current values. The app is written in Java and uses Android Studio as the IDE. The app is fully functional and works like the original plant app, but now it can be accessed from anywhere.",
+    "technologies": [""],
+    "pictures": [
+      { "src": "../images/ProjPic/ProPic6/cloud1.png", "alt": "Cloud-based plant app dashboard" },
+      { "src": "../images/ProjPic/ProPic6/cloud2.png", "alt": "Sensor connection status" },
+      { "src": "../images/ProjPic/ProPic6/cloud3.png", "alt": "App cloud sync confirmation" }
+    ],
+    "level": 6
+  },
+  {
+    "id": "island6",
+    "title": "Case Study: Impact of Social Media",
+    "summary": "Is social media bad for our mental health and wellbeing?",
+    "details": "In a Group Project we researched the impact of social media on our mental health and wellbeing. We used different sources and surveys to gather data and analyze it. The project includes a report and a presentation, which summarize our findings. We found that social media can have both positive and negative effects on our mental health, depending on how we use it. Minority Groups for different interests can find friends on social media, which helps them feel less lonely. But in multiple cases we also found that high social media use and a negative self image are correlated.",
+    "technologies": ["Python"],
+    "pictures": [
+      { "src": "../images/ProjPic/ProPic6/study1.png", "alt": "Depresion score grouped in social media use" },
+      { "src": "../images/ProjPic/ProPic6/study2.png", "alt": "Anxiety score grouped in social media use " },
+      { "src": "../images/ProjPic/ProPic6/study3.png", "alt": "Mean Self Esteem score grouped in social media use" }
+    ],
+    "level": 6
+  },{
+    "id": "island7",
+    "title": "Secret Project",
+    "summary": "I wonder what this is?",
+    "details": "Ehm yeah it is just Hello World",
+    "technologies": ["Terminal"],
+    "pictures": [
+      { "src": "../images/ProjPic/ProPic7/secret1.png", "alt": "Image of hello world " }
+    ],
+    "level": 7
+  }
+]

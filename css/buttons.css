@@ -1,0 +1,135 @@
+/* CSS for all buttons (back and menu) */
+
+.menu-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  image-rendering: pixelated;
+}
+
+
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  z-index: 20;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0;
+}
+
+
+
+.menu-toggle .fallback-icon {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  display: block;
+  text-align: center;
+  line-height: 50px; /* legit does nothing but scared to delete */
+  margin-bottom: 4px;
+}
+
+.menu-toggle:focus {
+  outline: none; /* remove focus outline */
+}
+.menu-toggle:active {
+  transform: scale(0.95); /* scale down on click */
+}
+.menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* light hover effect */
+  border-radius: 30%; /* shape boxy */
+  margin-top: 5px; /* cool animation */
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
+  background: none;
+  border: none;
+  z-index: 20;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-left: 5px; /* cool animation needs space */
+}
+
+.back-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  display: block;
+}
+
+.back-button .fallback-icon {
+  display: none;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  /*transform: scaleX(-1); /* mirror horizontally so we get the cool arrow xd - No longer needed i dont want an error*/
+}
+/*same hoover as our barrel*/
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* light hover effect */
+  border-radius: 30%; /* shape  */
+  margin-left: 0px; /* wanted shadow more left, but this looks cool */
+  /*transition: margin-left 0.3s ease; /* smooth transition but looks bit to much */
+
+}
+.back-button:active {
+  transform: scale(0.95); /* scale down on click */
+}
+.back-button:focus {
+  outline: none; /* remove focus outline */
+}
+
+/* Media changes for TABLET and Mobile */
+@media (max-width: 850px) {
+  .menu-toggle {
+    width: 60px; 
+    height: 60px;
+  }
+  .back-button {
+    width: 60px; 
+    height: 60px;
+  }
+}
+@media (max-width: 450px) {
+  .menu-toggle {
+    margin-top: -15px;
+  }
+  .back-button{
+    margin-top: -15px;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  .menu-toggle,
+  .back-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .menu-icon,
+  .back-icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu-toggle .fallback-icon,
+  .back-button .fallback-icon {
+    font-size: 0.8rem;
+    line-height: 1;
+    margin-top: 4px;
+  }
+}

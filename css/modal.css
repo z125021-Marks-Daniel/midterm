@@ -1,0 +1,407 @@
+
+
+/* Modal background overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.849);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* LOOK FOR THE OTHER SO U DONT BREAK SOMETHING*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hidden by default */
+.hidden {
+  display: none;
+}
+/* Modal wrapper to center content */
+.modal-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  size: 100%;
+}
+
+/* Modal content for our projects */
+.modal-content {
+  background-color: #fcebb4; /* Colors tries to look like old paper */
+  border: 4px solid #5a4325; /* wooden border */
+  padding: 2em;
+  color: #3b2b1b; /* Text color brown */
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 1px #fff2d2; /* small shadow for text */
+  border-radius: 0;
+  margin-top: 5%; /* */
+  width: 80%;
+  height: auto;
+  max-height: 80vh;            /* Don't let modal exceed screen */
+  overflow-y: auto;            /* Enable scrolling */
+
+  max-width: 90vw;    
+  overflow-x: hidden;     /* stop x scrolling*/
+  box-sizing: border-box; /* padding + border for the box */
+
+    word-wrap: break-word;       /* auto break long words*/
+  hyphens: auto;  
+  
+  position: relative; /* For everything on top*/
+
+}
+
+.about-text {
+ font-family: "Electrolize", sans-serif;
+}
+/* Technologies*/
+#modal-tech {
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+/* Technology tags */
+#modal-tech span {
+  background-color: #5a4325;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: 'Silkscreen', monospace;
+}
+
+/* The actual description of our Project*/
+#modal-description {
+ font-family: "Electrolize", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #3b2b1b;
+  text-shadow: none;
+}
+
+/*Everything for the pictures in our modal*/
+.modal-gallery {
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;   
+}
+
+.modal-gallery img {
+  width: 300px;
+  height: auto;
+  border: 2px solid #5a4325;
+  border-radius: 4px;
+  image-rendering: pixelated;
+  max-width: 100%;
+}
+
+.modal-media {
+  max-width: 300px;
+  height: auto;
+  border: 2px solid #5a4325;
+  border-radius: 4px;
+  image-rendering: pixelated;
+  margin: 5px;
+
+  object-fit: cover;       /* NO streching*/
+  overflow: hidden;        /* No overflow when to big */
+  display: block;
+}
+
+.modal-media:focus {
+  outline: none;
+}
+
+.modal-gallery video {
+  max-height: 200px;
+  background-color: black;
+}
+/* Boss modal styles */
+#boss-modal .boss-content {
+  background-color: #1c1c1c;
+  border: 3px solid #fff;
+  padding: 2em;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+
+  /* Make it bigger */
+  width: 90%;
+  max-width: 80%;  /* increased from 400px */
+  min-height: 70%; /* optional height boost */
+  margin-top: 25px;
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden; /* so boss stays inside the box */
+}
+
+
+/*The actualy icon of the boss*/
+#boss-monster {
+  /*Adjustable Size in the JS File here are the values */
+  width: min(25vw, 150px);
+  height: min(25vw, 150px);
+  transform: scale(var(--boss-scale, 1)); /* Default: 1 */
+  transform-origin: center;
+
+  background-image: url('../images/chest.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100%;
+  box-shadow: 0 0 20px rgba(255, 205, 26, 0);
+  cursor: pointer;
+  transition: top 0.3s ease, left 0.3s ease;
+  position: absolute;
+  image-rendering: pixelated;
+  color: white; /* For the fallback text */
+}
+/*When no image is loading rever to this*/
+#boss-monster.no-image::after {
+  content: "Boss";
+  display: block;
+  text-align: center;
+  padding-top: 60%;
+  font-family: 'Silkscreen', monospace;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #582f05;
+  border-radius: 20%;
+  border: #1c1c1c 4px solid;
+  
+}
+
+#boss-monster:active {
+  transform: scale(0.9);
+}
+
+/*The coin which pops up when clicking the chest*/
+.coin {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-image: url('../images/coin.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: coin-pop 0.6s ease-out forwards;
+  pointer-events: none;
+  z-index: 5;
+}
+/*A Keyframe, which animates the coin*/
+@keyframes coin-pop {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2) translateY(-40px);
+  }
+}
+
+/* Boss health bar styles */
+#boss-healthbar {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%; /* 👈 kürzer! */
+  height: 24px;  /* schmaler, optional */
+  background-color: #444;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 100;
+}
+
+/* Boss health fill styles */
+#boss-health-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #ff5050, #ff0000);
+  transition: width 0.3s ease;
+}
+
+/* Boss health text styles */
+#boss-health-text {
+  position: absolute;
+  top: 52px; /* leicht unter der Leiste */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  font-family: 'Silkscreen', monospace;
+  color: white;
+  z-index: 101;
+  text-shadow: 0 0 3px black;
+  pointer-events: none;
+}
+
+/* Boss timer styles */
+.boss-timer {
+  position: fixed;
+  bottom: 2vh;                /* Space from the buttom */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Silkscreen', monospace;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  font-size: clamp(1rem, 2.5vw, 1.8rem);  /* responsive */
+  z-index: 101;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Boss intro styles- NOT USED RIGHT NOW BUT HERE FOR LATER USE */
+.boss-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease-in;
+}
+
+.boss-intro.visible {
+  opacity: 1; /* use full white for best contrast */
+  pointer-events: auto; /* enable pointer interaction if needed */
+}
+
+.boss-intro h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@keyframes scale-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.boss-intro-content {
+  text-align: center;
+  font-family: 'Press Start 2P', monospace;
+  color: white;
+  animation: scale-fade-in 0.8s ease-out;
+}
+
+
+/* Lightbox styles for image viewing */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 3px solid white;
+  box-shadow: 0 0 20px black;
+  image-rendering: pixelated;
+}
+
+.lightbox.hidden {
+  display: none;
+}
+
+.lightbox img {
+  cursor: zoom-out;
+}
+
+/* Popup styles for notifications like boss,timer,won*/
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.popup.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#popup-text {
+  color: white;
+  font-family: 'Silkscreen', monospace;
+  font-size: 2rem;
+  text-align: center;
+}
+
+
+/* Responsiv für small screens*/
+@media (max-width: 600px) {
+  #boss-healthbar, #boss-health-fill {
+    width: 50vw;
+    height: 16px;
+    top: 20px;
+  }
+
+  #boss-health-text {
+    font-size: 0.85rem;
+    top: 40px;
+  }
+}
+
+.about-image {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: clamp(50px, 12vw, 100px);  /* smaller max size */
+  height: clamp(50px, 12vw, 100px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 45%;  /* slight vertical zoom tweak */
+  transform: scale(1.1);        /* zoom in by 10% */
+  border: 1px solid #000000;
+  overflow:visible;  
+
+}
+
+@media (max-width: 500px) {
+  .about-image {
+    top: 0.5em;
+    right: 0.5em;
+  }
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- disable double click -> zoom for mobile, so you can actually spam the touchscreen in a boss fight -->
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!--Fonts licenced by Google for free commercial use-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Daniel Marks Portfolio</title>
+
+    <!-- All different CSS Stylsheets imported, only use is a more structured directory -->
+    <link rel="stylesheet" href="../css/mainstyle.css" />
+    <link rel="stylesheet" href="../css/buttons.css" />
+    <link rel="stylesheet" href="../css/islands.css" />
+    <link rel="stylesheet" href="../css/menu.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
+  </head>
+  <body>
+    <!-- Background picture of sea -->
+    <div class="blur-image"></div>
+
+    <header>
+      <h1>Midterm Project: Daniel Marks</h1>
+    </header>
+
+    <!-- Side menu which opens when clicking the barrel-->
+    <nav class="side-menu" id="sideMenu">
+      <ul>
+        <br />
+        <br />
+        <br />
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><button id="unlock-all" class="side-button">Unlock All</button></li>
+        <li><button id="lock-all" class="side-button">Lock All</button></li>
+      </ul>
+    </nav>
+    <!-- Menu button to open the side menu -->
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open Menu">
+      <img
+        src="../images/barrel.png"
+        alt="Open Menu"
+        class="menu-icon"
+        style="display: none"
+        onload="this.style.display='block'; this.nextElementSibling.style.display='none';"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+      />
+      <span class="fallback-icon" style="display: none">Menu</span>
+    </button>
+
+    <!-- Back button to return to the main page -->
+    <button class="back-button" aria-label="Back">
+      <img
+        src="../images/back.png"
+        alt="Back"
+        class="back-icon"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+      />
+      <span class="fallback-icon">Back</span>
+    </button>
+
+    <main>
+      <!-- The About content, which opens when clicking the ship-->
+      <div id="about-modal" class="modal hidden">
+        <div class="modal-content">
+          <h3>About Me</h3>
+
+          <img src="../images/me.JPG" alt="pic of me" class="about-image" /> 
+          <p>Hello! I’m Daniel</p>
+          <p>
+            Im 22 Years old and from Germany! I am an Applied Computer Science
+            Student at the
+            <a href="https://www.HTW-Berlin.de/en/" target="_blank style"
+              >University of Applied Sciences for Engineering and Economics
+              Berlin</a>
+            and in my 5th Semester. My main focus in my study is Software
+            Engineering. Im best in the programming languages Java, Python and Go.
+            <br> <br>
+            My personal interests are Literature, Music and Art, although I
+            am not particularly skilled at any of these things. 
+            <br>
+            I wish you a great time on my pirate-themed portfolio website looking through my projects! 
+            <br><br>
+            Best regards
+            <br><br>
+            Daniel
+          </p>
+          
+
+          <!-- Add image or avatar here -->
+        
+        </div>
+      </div>
+
+      <!-- The Projects  -->
+      <h2>My Projects</h2>
+      <section id="projects">
+        <!-- islands will be inserted here -->
+      </section>
+    </main>
+
+    <!-- Modal for project details, which opens when clicking on an island -->
+    <div id="project-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3 id="modal-title">Project Title</h3>
+        <div id="modal-tech"></div>
+        <p id="modal-description">Full description goes here.</p>
+        <div id="modal-gallery" class="modal-gallery"></div>
+      </div>
+    </div>
+
+    <!-- Boss fight modal, which opens when clicking on the locked island -->
+    <div id="boss-modal" class="modal hidden">
+      <!-- Boss fight content and information like health -->
+      <div id="boss-healthbar">
+        <div id="boss-health-fill"></div>
+      </div>
+      <p id="boss-health-text">100 / 100</p>
+
+      <div class="boss-content">
+        <div id="boss-monster"></div>
+      </div>
+      <!-- Boss fight timer -->
+      <p id="boss-timer-text" class="boss-timer hidden">Time left: 30s</p>
+    </div>
+
+    <!--TODO: no longer important-  Intro modal for the boss fight, which opens when clicking on the locked island -->
+    <div id="boss-intro" class="boss-intro hidden">
+      <div class="boss-intro-content">
+        <h2 id="boss-intro-title">Boss Fight</h2>
+        <p id="boss-intro-details">Loading...</p>
+      </div>
+    </div>
+
+    <!-- Lightbox for zooming images, which opens when clicking on an image in the project modal -->
+    <div id="lightbox" class="lightbox hidden">
+      <img id="lightbox-img" src="" alt="Zoomed Image" />
+    </div>
+
+    <!-- Global popup for messages, which can be used to display information or errors -->
+    <div id="global-popup" class="popup hidden">
+      <p id="popup-text"></p>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Daniel Marks - Z125021</p>
+      <p> 
+        Images are Screenshots or Photos own of my own work <br>
+        Fonts are licenced by &copy;Google for free commercial use via SIL Open Font License <br>
+        Sprites are created by unique promps from &copy;ChatGPT and copyright-free and permitted for commercial and non-commercial use
+      </p>
+    </footer>
+
+    <!-- JavaScript files for functionality -->
+    <!-- JavaScript will also create the content of the html objects-->
+    <script src="mainlogic.js"></script>
+  </body>
+</html>
