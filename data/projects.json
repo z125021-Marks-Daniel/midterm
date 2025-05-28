@@ -90,15 +90,5 @@
       { "src": "../images/ProjPic/ProPic6/study3.png", "alt": "Mean Self Esteem score grouped in social media use" }
     ],
     "level": 6
-  },{
-    "id": "island7",
-    "title": "Secret Project",
-    "summary": "I wonder what this is?",
-    "details": "Ehm yeah it is just Hello World",
-    "technologies": ["Terminal"],
-    "pictures": [
-      { "src": "../images/ProjPic/ProPic7/secret1.png", "alt": "Image of hello world " }
-    ],
-    "level": 7
   }
 ]
