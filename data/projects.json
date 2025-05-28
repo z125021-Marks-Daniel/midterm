@@ -64,20 +64,7 @@
       { "src": "../images/ProjPic/ProPic5/app3.jpeg", "alt": "Timetable app day view" }
     ],
     "level": 5
-  },
-  {
-    "id": "island6",
-    "title": "Plant App but in Cloud",
-    "summary": "Cloud version of the Plant App for Android.",
-    "details": "FIX: The plant app is now in the Amazon Web Services Cloud. It uses AWS IoT to connect the ESP8266 to the cloud and send the data to an InfluxDB database. The Android app reads the data from the database and shows the user the current values. The app is written in Java and uses Android Studio as the IDE. The app is fully functional and works like the original plant app, but now it can be accessed from anywhere.",
-    "technologies": [""],
-    "pictures": [
-      { "src": "../images/ProjPic/ProPic6/cloud1.png", "alt": "Cloud-based plant app dashboard" },
-      { "src": "../images/ProjPic/ProPic6/cloud2.png", "alt": "Sensor connection status" },
-      { "src": "../images/ProjPic/ProPic6/cloud3.png", "alt": "App cloud sync confirmation" }
-    ],
-    "level": 6
-  },
+  }, 
   {
     "id": "island6",
     "title": "Case Study: Impact of Social Media",
