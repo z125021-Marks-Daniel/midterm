@@ -19,9 +19,9 @@
     "details": "In an extra course in high school we built a Lego Mindstorms robot, which could fight against other robots. We programmed it in Java and used the Lego Mindstorms API to control the motors and sensors. It works fully autonomously and can detect the opponent robot and attack it. It does that with multiple lidar sensors and pressure sensors. The goal is to push the opponent robot out of the ring. To help with that goal the robot has a giant shovel like front, which tries to lift enemies up and caryy them out of the ring. To not get pushed out of the ring itself, it has a special mechanism to detect the edge of the ring via a color sensor and drive back in. The robot uses two Lego Mindstorms Control Units, which are connected via Bluetooth. One controls the motors and the other one the sensors.It actually won the first place in the competition.",
     "technologies": ["Java", "Lego Mindstorms"],
     "pictures": [
-      { "src": "../images/ProjPic/ProPic2/robot1.jpg", "alt": "Lego robot front view" },
-      { "src": "../images/ProjPic/ProPic2/robot2.jpg", "alt": "Lego robot side view" },
-      { "src": "../images/ProjPic/ProPic2/robot3.jpg", "alt": "Lego robot bottom view" },
+      { "src": "../images/ProjPic/ProPic2/robot1.JPG", "alt": "Lego robot front view" },
+      { "src": "../images/ProjPic/ProPic2/robot2.JPG", "alt": "Lego robot side view" },
+      { "src": "../images/ProjPic/ProPic2/robot3.JPG", "alt": "Lego robot bottom view" },
       { "src": "../images/ProjPic/ProPic2/robvid1.mp4", "alt": "Lego robot attacking video", "type": "video" }
     ],
     "level": 2
