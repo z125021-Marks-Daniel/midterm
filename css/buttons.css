@@ -92,6 +92,7 @@
 }
 
 /* Media changes for TABLET and Mobile */
+/*
 @media (max-width: 850px) {
   .menu-toggle {
     width: 60px; 
@@ -110,7 +111,7 @@
     margin-top: -15px;
   }
 }
-
+*/
 
 
 @media (max-width: 600px) {
